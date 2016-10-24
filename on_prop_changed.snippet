@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2015/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>on property changed</Title>
+      <Shortcut>op</Shortcut>
+
+    </Header>
+    <Snippet>
+	   <Imports>
+        <Import>
+          <Namespace>System.ComponentModel</Namespace>
+        </Import>
+      </Imports>
+      <Code Language="CSharp">
+        <![CDATA[
+         protected void OnPropertyChanged(params string[] names)
+        {
+            if(PropertyChanged!=null)
+            {
+                foreach (var name in names)
+                    PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
