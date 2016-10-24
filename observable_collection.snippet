@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2015/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>observable collection</Title>
+      <Shortcut>ob</Shortcut>
+    </Header>
+    <Snippet>
+		<Imports>
+			<Import>
+			  <Namespace>System.Collections.ObjectModel</Namespace>
+			</Import>
+		</Imports>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <Default>name</Default>
+        </Literal>
+        <Literal>
+          <ID>type</ID>
+          <Default>int</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+			public ObservableCollection<$type$> $name$ { get; set; }
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
