@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2015/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>on property changed</Title>
+      <Shortcut>rc</Shortcut>
+    </Header>
+    <Snippet>
+	   <Imports>
+        <Import>
+          <Namespace>System.Windows.Input</Namespace>
+        </Import>
+      </Imports>
+      <Code Language="CSharp">
+        <![CDATA[
+         public class RelayCommand : ICommand
+		{
+			private Action<object> _pExecute;
+			private Func<object, bool> _pCanExecute;
+
+			public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
+			{
+				_pExecute = execute;
+				_pCanExecute = canExecute;
+			}
+
+			public event EventHandler CanExecuteChanged;
+
+			public bool CanExecute(object parameter)
+			{
+				return _pCanExecute == null || _pCanExecute(parameter);
+			}
+
+			public void Execute(object parameter)
+			{
+				_pExecute(parameter);
+			}
+		}
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
