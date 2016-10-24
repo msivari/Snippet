@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2015/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>observable collection</Title>
+      <Shortcut>propdx</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>_name</ID>
+          <Default>Name</Default>
+        </Literal>
+		<Literal>
+		  <ID>_type_name</ID>
+          <Default>n</Default>
+        </Literal>
+        <Literal>
+          <ID>_type</ID>
+          <Default>int</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+        public $_type$ $_name$
+        {
+          get { return GetProperty($_name$); }
+          set{ SetProperty($_name$, value); }
+        }
+             ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
