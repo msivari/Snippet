@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2015/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>observable collection</Title>
+      <Shortcut>propmv</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>_name</ID>
+          <Default>Name</Default>
+        </Literal>
+		<Literal>
+		  <ID>_type_name</ID>
+          <Default>n</Default>
+        </Literal>
+        <Literal>
+          <ID>_type</ID>
+          <Default>int</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+			private $_type$ _$_type_name$$_name$;
+			
+            public $_type$ $_name$
+            {
+                get { return _$_type_name$$_name$; }
+                set
+                {
+                    if (_$_type_name$$_name$ != value)
+                    {
+                        _$_type_name$$_name$ = value;
+                        OnPropertyChanged("$_name$");
+                    }
+                }
+            }
+                ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
