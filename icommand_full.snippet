@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2015/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>on property changed</Title>
+      <Shortcut>icf</Shortcut>
+	  <Description>Implement ICommand</Description>
+    </Header>
+    <Snippet>
+	   <Imports>
+        <Import>
+          <Namespace>System.Windows.Input</Namespace>
+        </Import>
+      </Imports>
+	   <Declarations>
+        <Literal>
+          <ID>_name</ID>
+          <ToolTip>Name of command</ToolTip>
+          <Default>Name</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+        private ICommand _cmd$_name$;
+		
+		public ICommand $_name$Command
+        {
+            get
+            {
+                if (_cmd$_name$ == null)
+                    _cmd$_name$ = new RelayCommand(Execute$_name, CanExecute$_name);
+                return _cmd$_name$;
+            }
+        }
+
+		private bool CanExecute$_name(object arg)
+        {
+            throw new NotImplementedException();
+        }
+		
+        protected virtual void Execute$_name(object obj)
+        {
+			throw new NotImplementedException();
+        }
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
